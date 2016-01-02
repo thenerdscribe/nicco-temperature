@@ -6,10 +6,14 @@
 
 		<body>
 
-			<form action="post.php" method="post">
-			  <input name="temperature" value="NC">
-			  <input name="date" value="NC">
-			  <input name="time" value="NC">
+			<h1>
+				Manual Data Input Form
+			</h1>
+
+			<form name="dataform" title="" action="post.php" method="post">
+			  Temperature (F): <input name="temperature" value="-404"/><br/>
+			  Date (MM-DD-YYY): <input name="date" value="MM-DD-YYYY"><br/>
+			  Time (HH:MM): <input name="time" value="HH:MM"><br/>
 			  <input type="submit" value="SEND">
 			</form>
 
