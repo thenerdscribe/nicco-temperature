@@ -21,10 +21,24 @@
 		<?php
 			require_once ('temperature_class.php');
 			
+			function debug($data) {
+				echo '<pre>';
+				var_dump($data);
+				echo '</pre>';
+			}
 			$tempEntry = new temperature_entry();
 			$results = $tempEntry->getTemperatureEntry();
+			$chartData = array();
+			foreach($results as $result => $data) {
+				$package = array();
+				$package['temperature'] = $data['temperature'];
+				$newDate = $data['entry_date'].'-'.$data['entry_time'];
+				$package['new_date'] = str_replace(':', '-', $newDate);
+				$chartData[] = $package;
+			}
+			$arrayVal = array_values($chartData);
+			$en_out = json_encode($arrayVal);
 			
-			$en_out = json_encode($results);
 		?>
 		<div id="chartdiv"></div>
 		<script>
@@ -34,7 +48,7 @@
 			    "marginRight": 40,
 			    "marginLeft": 40,
 			    "autoMarginOffset": 20,
-			    "dataDateFormat": "YYYY-MM-DD",
+			    "dataDateFormat": "MM-DD-YYYY-L-NN",
 			    "valueAxes": [{
 			        "id": "v1",
 			        "axisAlpha": 0,
@@ -92,7 +106,7 @@
 			      "offset":50,
 			      "scrollbarHeight":10
 			    },
-			    "categoryField": "entry_date",
+			    "categoryField": "new_date",
 			    "categoryAxis": {
 			        "parseDates": true,
 			        "dashLength": 1,
@@ -101,7 +115,7 @@
 			    "export": {
 			        "enabled": true
 			    },
-			    "dataProvider": [<?php echo $en_out; ?>]
+			    "dataProvider": <?php echo $en_out; ?>
 			});
 
 			chart.addListener("rendered", zoomChart);
@@ -112,5 +126,6 @@
 			    chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
 			}
 		</script>
+		
 	</body>
 </html>
