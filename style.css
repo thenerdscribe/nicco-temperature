@@ -32,8 +32,10 @@ main {
 .last-updated {
 	padding: 20px;
 	display: -webkit-flex;
-	flex-direction: row;
+
 }
+
+
 
 .last-updated__title {
 	text-transform: uppercase;
@@ -64,4 +66,21 @@ main {
 	/*margin: 0;*/
 	line-height: .8;
 	
+}
+
+@media screen and (max-width: 800px) {
+	main {
+		-webkit-justify-content: flex-start;
+	}
+	
+	.last-updated {
+		-webkit-flex-direction: column;
+	}
+	.last-updated__data {
+		font-size: 10rem;
+	}
+	
+	.last-updated__meta > * {
+		font-size: 2rem;
+	}
 }
