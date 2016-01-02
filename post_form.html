@@ -6,39 +6,22 @@
 		<title>Manual Form Post</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	
-	<body>
 
-<<<<<<< Updated upstream
+	<body>
 		<h1>
 			Manual Data Input Form
 		</h1>
 
 		<form name="dataform" title="" action="post.php" method="post">
-		  Temperature (F): <input name="temperature" value="-404"/><br/>
-		  Date (MM-DD-YYY): <input name="date" value="MM-DD-YYYY"><br/>
-		  Time (HH:MM): <input name="time" value="HH:MM"><br/>
-		  <input type="submit" value="SEND">
+			<label for="temp">Temperature (F) : </label>
+			<input id="temp" name="temperature" type="number" value="-404"/><br/>
+			<label for="date">Date (MM-DD_YYYY) : </label>
+			<input id="date" name="date" type="date" value="01 / 01 / 2016"><br/>
+			<label for="time">Time (HH:MM) : </label>
+			<input id="time" name="time" type="time" value="12:00 AM"><br/>
+			<input type="submit" value="SEND">
 		</form>
-=======
-		<body>
-			<h1>
-				Manual Data Input Form
-			</h1>
-
-			<form name="dataform" title="" action="post.php" method="post">
-				<label for="temp">Temperature (F) : </label>
-				<input id="temp" name="temperature" type="number" value="-404"/><br/>
-				<label for="date">Date (MM-DD_YYYY) : </label>
-				<input id="date" name="date" type="date" value="01 / 01 / 2016"><br/>
-				<label for="time">Time (HH:MM) : </label>
-				<input id="time" name="time" type="time" value="12:00 AM"><br/>
-				<input type="submit" value="SEND">
-			</form>
->>>>>>> Stashed changes
 
 	</body>
-
-	
 
 </html>
