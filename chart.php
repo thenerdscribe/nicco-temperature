@@ -20,12 +20,8 @@
 	<body>
 		<?php
 			require_once ('temperature_class.php');
-			
-			function debug($data) {
-				echo '<pre>';
-				var_dump($data);
-				echo '</pre>';
-			}
+			require_once ('helpers.php');
+			$helpers = new Helpers();
 			$tempEntry = new temperature_entry();
 			$results = $tempEntry->getTemperatureEntry();
 			$chartData = array();
@@ -39,6 +35,7 @@
 			$arrayVal = array_values($chartData);
 			$en_out = json_encode($arrayVal);
 			
+			$helpers->debug($en_out);
 		?>
 		<div id="chartdiv"></div>
 		<script>
@@ -48,7 +45,7 @@
 			    "marginRight": 40,
 			    "marginLeft": 40,
 			    "autoMarginOffset": 20,
-			    "dataDateFormat": "MM-DD-YYYY-L-NN",
+			    "dataDateFormat": "MM / DD / YYYY-L-N A",
 			    "valueAxes": [{
 			        "id": "v1",
 			        "axisAlpha": 0,
@@ -110,6 +107,7 @@
 			    "categoryAxis": {
 			        "parseDates": true,
 			        "dashLength": 1,
+			        "minPeriod": "mm",
 			        "minorGridEnabled": true
 			    },
 			    "export": {
