@@ -3,32 +3,16 @@
 <html>
 	<head>
 		<title>Home Temperture Monitor</title>
-		<link rel="stylesheet" type="text/css" href="reset.css">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+		<?php include 'head_stuff.php'; ?>
 	</head>
 	<body>
 		<?php
 			require_once ('temperature_class.php');
-			
+			require_once ('helpers.php');
 			$tempEntry = new temperature_entry();
-			// $date = $_GET['date'];
-			// $temperature = $_GET['temperature'];
-			
-			// echo 'Today is '.$date;
-			// echo '<h1>It is '.$temperature.' </h1>';
+			$helper = new Helpers();
 			$lastUpdated = $tempEntry->getLastUpdated();	
-			
-			// echo date('m-d-y-H:i:s');
-			function debug($data) {
-				echo '<pre>';
-				var_dump($data);
-				echo '</pre>';
-			}
-
-
+			$helper->debug($lastUpdated);
 		?>
 		<header class="main-header">
 			<h1>Temperature Monitoring System</h1>

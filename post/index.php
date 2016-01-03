@@ -1,5 +1,5 @@
 <?php
-	require_once ('temperature_class.php');
+	require_once ('../temperature_class.php');
 	
 	$tempEntry = new temperature_entry();
 	
