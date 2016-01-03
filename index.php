@@ -12,7 +12,6 @@
 			$tempEntry = new temperature_entry();
 			$helper = new Helpers();
 			$lastUpdated = $tempEntry->getLastUpdated();	
-			$helper->debug($lastUpdated);
 		?>
 		<header class="main-header">
 			<h1>Temperature Monitoring System</h1>
