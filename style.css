@@ -3,9 +3,11 @@
 }
 
 html, body {
-	font: 300 17px/1.4 Arial, sans-serif;
-	background: #333;
-	color: #fff;
+	font: 300 17px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background: #EFEFD0;
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	color: #1A659E;
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -13,10 +15,14 @@ html, body {
 }
 
 .main-header {
-	background: #ffaa16;
-	color: #333;
+	background: #89002B;
+	color: #EFEFD0;
 	padding: 5px 10px;
 	margin: 0;
+	-webkit-order: 2;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 }
 
 main {
@@ -27,6 +33,7 @@ main {
 .main-header h1 {
 	margin: 0;
 	text-align: center;
+	font-weight: 100;
 }
 
 .last-updated {
@@ -39,6 +46,7 @@ main {
 
 .last-updated__title {
 	text-transform: uppercase;
+	font-weight: 300;
 }
 
 .last-updated__meta {
@@ -65,6 +73,7 @@ main {
 	/*font-size: 10rem;*/
 	/*margin: 0;*/
 	line-height: .8;
+	font-weight: 300;
 	
 }
 
