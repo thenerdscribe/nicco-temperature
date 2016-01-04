@@ -45,7 +45,7 @@
 			    "marginRight": 40,
 			    "marginLeft": 40,
 			    "autoMarginOffset": 20,
-			    "dataDateFormat": "MM / DD / YYYY-HH-NN",
+			    "dataDateFormat": "MM/DD/YYYY JJ-NN-SS",
 			    "valueAxes": [{
 			        "id": "v1",
 			        "axisAlpha": 0,
@@ -115,6 +115,10 @@
 			    },
 			    "dataProvider": <?php echo $en_out; ?>
 			});
+
+			var categoryAxis = chart.categoryAxis;
+			categoryAxis.parseDates = true;
+			categoryAxis.minPeriod = "ss";
 
 			chart.addListener("rendered", zoomChart);
 
