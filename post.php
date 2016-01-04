@@ -4,9 +4,9 @@
 	$tempEntry = new temperature_entry();
 	
 	$data = array(
-			'temperature' => $_POST['temperature'],
-			'entry_date'  =>  $_POST['date'],
-			'entry_time'  =>  $_POST['time'],
+			'temperature' => $_GET['temperature'],
+			'entry_date'  =>  $_GET['date'],
+			'entry_time'  =>  $_GET['time'],
 			);
 	$tempEntry->addEntry($data);
 	date_default_timezone_set('America/Phoenix');
